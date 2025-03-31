@@ -10,39 +10,41 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import application.record.LivroDTO;
-import application.record.LivroInsertDTO;
-import application.service.LivroService;
+import application.record.QuestaoDTO;
+import application.record.QuestaoInsertDTO;
+import application.service.QuestaoService;
 
 @RestController
-@RequestMapping("/livros")
-public class LivroController {
-
+@RequestMapping("/questoes")
+public class QuestaoController {
+    
     @Autowired
-    private LivroService livroService;
+    private QuestaoService questaoService;
 
     @GetMapping
-    public Iterable<LivroDTO> list() {
-        return livroService.getAll();
+    public Iterable<QuestaoDTO> list() {
+        return questaoService.getAll();
     }
 
     @GetMapping("/{id}")
-    public LivroDTO getOne(@PathVariable long id) {
-        return livroService.getOne(id);
+    public QuestaoDTO getOne(@PathVariable long id) {
+        return questaoService.getOne(id);
     }
 
     @PostMapping
-    public LivroDTO insert(@RequestBody LivroInsertDTO livro) {
-        return livroService.insert(livro);
+    public QuestaoDTO insert(@RequestBody QuestaoInsertDTO questao) {
+        return questaoService.insert(questao);
     }
 
     @PutMapping("/{id}")
-    public LivroDTO update(@PathVariable long id, @RequestBody LivroDTO livro) {
-        return livroService.update(id, livro);
+    public QuestaoDTO update(@PathVariable long id, @RequestBody QuestaoDTO questao) {
+        return questaoService.update(id, questao);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable long id) {
-        livroService.delete(id);
+        questaoService.delete(id);
     }
+
+
 }

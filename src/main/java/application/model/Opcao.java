@@ -11,14 +11,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-@Table(name = "autores")
+@Table(name = "opcoes")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Autor {
+public class Opcao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(nullable = false)
-    private String nome;
+    private String descricao;
+    private int correto;
 }
