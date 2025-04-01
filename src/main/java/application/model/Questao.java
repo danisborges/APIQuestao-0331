@@ -3,13 +3,15 @@ package application.model;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.Table;
 import application.record.QuestaoDTO;
+import application.record.QuestaoInsertDTO;
+import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 
@@ -31,7 +33,13 @@ public class Questao {
     public Questao(QuestaoDTO record) {
         this.id = record.id();
         this.enunciado = record.enunciado();
-        this.categoria = record.Categoriaria();
+        this.categoria = new Categoria(record.categoria())
     }
 
+    public Questao(QuestaoInsertDTO record) {
+        this.enunciado = record.enunciado();
+        Categoria cat = new Categoria();
+        cat.setId(record.id_categoria());
+        this.categoria = cat;
+    }
 }

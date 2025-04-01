@@ -2,11 +2,16 @@ package application.record;
 
 import application.model.Questao;
 
-public record QuestaoDTO(long id, String enunciado) {
-    public QuestaoDTO(Questao entidade) {
+public record QuestaoDTO(
+    long id,
+    String enunciado,
+    CategoriaDTO categoria
+) {
+    public QuestaoDTO(Questao questao) {
         this(
-            entidade.getId(),
-            entidade.getEnunciado()
-        );
+            questao.getId(), 
+            questao.getEnunciado(),
+            new CategoriaDTO(questao.getCategoria())
+        );        
     }
 }

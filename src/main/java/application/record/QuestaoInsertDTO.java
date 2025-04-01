@@ -1,5 +1,5 @@
 package application.record;
 
-public record QuestaoInsertDTO(long id, String enunciado, int categorias) {
+public record QuestaoInsertDTO(long id, String enunciado, int id_categoria) {
     
 }
