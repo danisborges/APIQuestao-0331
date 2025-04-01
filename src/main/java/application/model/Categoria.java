@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.Table;
+import application.record.CategoriaDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,4 +22,9 @@ public class Categoria {
     private long id;
     @Column(nullable = false)
     private String nome;
+
+    public Categoria(CategoriaDTO modelo) {
+        this.id = modelo.id();
+        this.nome = modelo.nome();
+    }
 }

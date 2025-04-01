@@ -9,6 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import application.model.Questao;
 import application.record.QuestaoDTO;
+import application.record.QuestaoInsertDTO;
 import application.repository.QuestaoRepository;
 
 @Service
@@ -33,7 +34,7 @@ public class QuestaoService {
         return new QuestaoDTO(resultado.get());
     }
 
-    public QuestaoDTO insert(QuestaoDTO questao) {
+    public QuestaoDTO insert(QuestaoInsertDTO questao) {
         return new QuestaoDTO(questaoRepo.save(new Questao(questao)));
     }
 

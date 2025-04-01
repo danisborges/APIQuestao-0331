@@ -1,0 +1,25 @@
+@url = https://3306-danisborges-apiquestao0-1oehoeoc6de.ws-us118.gitpod.io
+
+GET {{url}}/categorias
+
+###
+GET {{url}}/categorias/2
+
+###
+POST {{url}}/categorias
+Content-Type: application/json
+
+{
+    "descricao" : "A" 
+}
+
+###
+PUT {{url}}/categorias/2
+Content-Type: application/json
+
+{
+
+}
+
+###
+DELETE {{url}}/categorias/1
