@@ -1,24 +1,24 @@
-@url = https://3306-danisborges-apiquestao0-1oehoeoc6de.ws-us118.gitpod.io
+@url = https://8080-danisborges-apiquestao0-7finnr5p3m8.ws-us118.gitpod.io
 
 GET {{url}}/categorias
 
 ###
-GET {{url}}/categorias/2
+GET {{url}}/categorias/3
 
 ###
 POST {{url}}/categorias
 Content-Type: application/json
 
 {
-    "descricao" : "A" 
+    "nome" : "Biologia"
 }
 
 ###
-PUT {{url}}/categorias/2
+PUT {{url}}/categorias/3
 Content-Type: application/json
 
 {
-
+    "nome" : "História"
 }
 
 ###
